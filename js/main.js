@@ -75,5 +75,33 @@ function atualizarValores(contador,operacao, peca) {
    window.onload = setTimeout(function(){
     alert('Olá. Precisamos da sua ajuda para lutar contra o exercíto inimigo. Robotron precisa de 200 de força, 300 de poder, 100 de energia e 50 de velocidade');
 }, 400);
+            
+
+/* -------Troca a imagem do Robô------ */
+const robotron = document.querySelector('.robotron')
+const botao = document.querySelector('.robo__btn')
+const cor = ['preto','branco','azul','amarelo','rosa','vermelho']
+const roboImagem = document.getElementById("imagem-robo")
+const somTinta = document.querySelector('[data-spraySound]')
+localStorage.setItem("imagemIndice", i)
+var i = 0
+
+botao.addEventListener("click", ()=>{
+    changeImage();
+    somTinta.play();
+})
+
+function changeImage() { 
+    const roboImagem = document.getElementById("imagem-robo") 
+    i = i + 1
+    console.log(i)
+     if (i < 5) {
+         roboImagem.src = "img/Robotron 2000 - "+cor[i]+"/robotron.png"
+     } else {
+         i = i - 5;
+         roboImagem.src = "img/Robotron 2000 - "+cor[0]+"/robotron.png";
+     }
+ }
+
 
 
