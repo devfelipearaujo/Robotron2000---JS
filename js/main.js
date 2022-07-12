@@ -104,4 +104,32 @@ function changeImage() {
  }
 
 
+/* -------Iniciar a produção do Robô------ */
+const producao = document.getElementById('producao')
 
+producao.addEventListener("click", (evento)=>{
+    evento.preventDefault()
+    console.log(evento)
+    verificaRequisitos()
+})
+
+function verificaRequisitos() {
+    const valorForca = document.querySelector('[data-estatistica=forca]').textContent;
+    const valorPoder = document.querySelector('[data-estatistica=poder]').textContent;
+    const valorEnergia = document.querySelector('[data-estatistica=energia]').textContent;
+    const valorVelocidade = document.querySelector('[data-estatistica=velocidade]').textContent;
+    const robotronVoz = document.querySelector(`[data-robotronvozx]`)
+    const rise = document.querySelector(`[data-rise]`)
+
+    if((valorForca >= minForca)&&(valorPoder >= minPoder)&&(valorEnergia >= minEnergia)&&(valorVelocidade >= minVelocidade)){
+        rise.play()  
+        setTimeout(function(){
+            robotronVoz.play()      
+       }, 1100);     
+        setTimeout(function(){
+            alert("Conseguimos! Robotron saiu para a batalha com os status ideais e derrotou todos os inimigos.");    
+       }, 2000);
+    } else {
+        alert("Para esta batalha precisaremos de Força: 200 Poder: 300 Energia: 100 Velocidade:50")
+    }
+}
