@@ -55,24 +55,25 @@ function atualizarValores(contador,operacao, peca) {
     const valorContador = contadorValor.value = parseInt(contadorValor.value)
     const atributoPeca = pecas[peca]
 
-    /* -------Atualiza os valores do contador de peças adicionadas------ */
+/* -------Atualiza os valores do contador de peças adicionadas------ */
     if ((operacao === '-') && (valorContador > 0)) {
         contadorValor.value = parseInt(contadorValor.value) - 1;
     } else if((operacao === '+')&&(valorContador < 4)) {
         contadorValor.value = parseInt(contadorValor.value) + 1
     }
-    /* -------Atualiza os valores das estatisticas------ */
-       estatisticas.forEach((estatisticaElemento) => {
-        // const valorElemento = estatisticaElemento.textContent = parseInt(estatisticaElemento.textContent);
-        if ((operacao === '+') && (valorContador < 4)) {
-            estatisticaElemento.textContent = parseInt(estatisticaElemento.textContent) + atributoPeca[estatisticaElemento.dataset.estatistica]
-    } else if ((operacao === '-') && (valorContador > 0) && (valorContador <= 4)) {
-        estatisticaElemento.textContent = parseInt(estatisticaElemento.textContent) - atributoPeca[estatisticaElemento.dataset.estatistica]
+
+/* -------Atualiza os valores das estatisticas------ */
+    estatisticas.forEach((estatisticaElemento) => {
+    // const valorElemento = estatisticaElemento.textContent = parseInt(estatisticaElemento.textContent);
+    if ((operacao === '+') && (valorContador < 4)) {
+        estatisticaElemento.textContent = parseInt(estatisticaElemento.textContent) + atributoPeca[estatisticaElemento.dataset.estatistica]
+} else if ((operacao === '-') && (valorContador > 0) && (valorContador <= 4)) {
+    estatisticaElemento.textContent = parseInt(estatisticaElemento.textContent) - atributoPeca[estatisticaElemento.dataset.estatistica]
 }
 })
    }
 
-   window.onload = setTimeout(function(){
+   window.onload = setTimeout(()=>{
     alert('Olá. Precisamos da sua ajuda para lutar contra o exercíto inimigo. Robotron precisa de 200 de força, 300 de poder, 100 de energia e 50 de velocidade');
 }, 400);
             
@@ -83,7 +84,7 @@ const botao = document.querySelector('.robo__btn')
 const cor = ['preto','branco','azul','amarelo','rosa','vermelho']
 const roboImagem = document.getElementById("imagem-robo")
 const somTinta = document.querySelector('[data-spraySound]')
-localStorage.setItem("imagemIndice", i)
+sessionStorage.setItem("imagemIndice", i)
 var i = 0
 
 botao.addEventListener("click", ()=>{
@@ -123,10 +124,10 @@ function verificaRequisitos() {
 
     if((valorForca >= minForca)&&(valorPoder >= minPoder)&&(valorEnergia >= minEnergia)&&(valorVelocidade >= minVelocidade)){
         rise.play()  
-        setTimeout(function(){
+        setTimeout(()=>{
             robotronVoz.play()      
        }, 1100);     
-        setTimeout(function(){
+        setTimeout(()=>{
             alert("Conseguimos! Robotron saiu para a batalha com os status ideais e derrotou todos os inimigos.");    
        }, 2000);
     } else {
