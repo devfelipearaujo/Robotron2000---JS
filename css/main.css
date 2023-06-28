@@ -1,0 +1,100 @@
+body {
+    background-image: url(../img/fundo.jpg);
+    background-position: center center;
+    background-size: cover cover;
+    font-weight: 300;
+}
+
+body, input {
+    font-family: 'Teko', sans-serif;
+}
+
+.main__box {
+    display: flex;
+    margin: 2.5% 4.5%;
+    position: relative;
+}
+
+.robotron__box {
+    height: 400px;
+    width: 40%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.estatisticas__box {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 2%;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20%;
+    border: 1px solid black;
+    margin-right: 1.5%;
+}
+
+.estatistica-titulo {
+    font-size: 1.5rem;
+}
+
+.estatistica-numero {
+    font-size: 3rem;
+}
+
+.pecas__box {
+    width: 35%;
+    border: 1px solid black;
+}
+
+.robotron {
+    height: 110%;
+}
+
+.estatistica {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.estatistica:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.estatistica-numero {
+    border: 1px solid black;
+    color: white;
+    background: none;
+    /* text-align: center; */
+    border-radius: 50%;
+}
+
+ .estatistica:nth-child(odd) .estatistica-numero {
+    padding: 15% 24%;
+}
+
+.estatistica:nth-child(even) .estatistica-numero {
+    padding: 5%;
+}
+
+.controle__box {
+    display: flex;
+}
+
+.peca__box {
+    display: flex;
+}
+
+/* .controle-contador {
+    width: 40px;
+    height: 35px;
+    background: none;
+    margin: 0 1rem;
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5em;
+    display: inline-flex;
+    align-items: center;
+    padding-top: 8px;
+} */
+

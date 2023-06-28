@@ -15,9 +15,9 @@
 <body>
     <main>
         <section class="robotron">
-            <img class="robo" src="img/Robotron 2000 - Preto/robotron.png" alt="Robotron">
+            <img class="robo" data-cor="0" src="img/Robotron 2000 - Preto/robotron.png" alt="Robotron" id="imagem-robo">
             <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
-            <button class="robo__btn">Trocar Robô</button>
+            <button class="robo__btn">Pintar Armadura</button>
         </section>
 
         <section class="box estatisticas">
@@ -100,6 +100,9 @@
         </section>
     </main>
 
+    <audio src="sound/peça som.mp3" data-pecaSound></audio>
+    <audio src="sound/spray tinta.mp3" data-spraySound></audio>
+    <audio src="sound/robo.mp3" data-rise></audio>
     <audio src="sound/robotron.wav" data-robotronvozx></audio>
 
     <script src="js/main.js"></script>
