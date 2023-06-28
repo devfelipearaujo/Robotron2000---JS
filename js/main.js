@@ -81,7 +81,7 @@ function atualizarValores(contador,operacao, peca) {
 /* -------Troca a imagem do Robô------ */
 const robotron = document.querySelector('.robotron')
 const botao = document.querySelector('.robo__btn')
-const cor = ['preto','branco','azul','amarelo','rosa','vermelho']
+const cor = ['Preto','Branco','Azul','Amarelo','Rosa','Vermelho']
 const roboImagem = document.getElementById("imagem-robo")
 const somTinta = document.querySelector('[data-spraySound]')
 sessionStorage.setItem("imagemIndice", i)
